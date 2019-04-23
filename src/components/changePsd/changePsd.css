@@ -1,0 +1,116 @@
+.content {
+  margin: 1.1rem 0;
+  margin-left: 0.5rem;
+  margin-bottom: 0;
+}
+.mdl_login img {
+  width: 2.8rem;
+}
+.mdl_login {
+  margin-right: 0.5rem;
+}
+
+.mdl_form {
+  margin-right: 0.5rem;
+  margin-top: 0.15rem;
+  position: relative;
+}
+.mdl_form input {
+  padding: 0.2rem;
+  margin: 0.4rem 0;
+  border: none;
+  background-color: #fff;
+  width: 100%;
+  text-indent: 0;
+  border-bottom: 1px solid rgba(229, 229, 229, 1);
+  font-size: 0.34rem;
+  color: #333;
+  box-sizing: border-box;
+}
+.mdl_form .getYzm {
+  width: 2.03rem;
+  height: 0.53rem;
+  border: 1px solid rgba(0, 133, 202, 1);
+  border-radius: 32px;
+  text-align: center;
+  line-height: 0.53rem;
+  color: rgba(0, 133, 202, 1);
+  position: absolute;
+  right: 0.2rem;
+  top: 2.25rem;
+}
+.mdl_form input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: rgba(217, 217, 217, 1);
+}
+.mdl_form input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: rgba(217, 217, 217, 1);
+}
+.mdl_form input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: rgba(217, 217, 217, 1);
+}
+.mdl_form input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: rgba(217, 217, 217, 1);
+}
+.mdl_login_btn {
+  margin-top: 0.7rem;
+  width: 6.87rem;
+  height: 1.35rem;
+  margin-left: 0.315rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -3.43rem;
+}
+.mdl_login_btn img {
+  width: 6.87rem;
+  height: 1.35rem;
+}
+.mdl_login_btn span {
+  position: absolute;
+  width: 6.87rem;
+  height: 1.35rem;
+  margin-top: -1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.36rem;
+  color: rgba(255, 255, 255, 1);
+}
+/* 手机号码 密码校验 */
+.rule_tel {
+  border: 1px solid #f56c6c !important;
+  border-radius: 5px;
+}
+.rule_yzm {
+  border: 1px solid #f56c6c !important;
+  border-radius: 5px;
+}
+.rule_pwd {
+  border: 1px solid #f56c6c !important;
+  border-radius: 5px;
+}
+.msg {
+  font-size: 0.23rem;
+  color: #f56c6c;
+  position: absolute;
+  top: 1.4rem;
+}
+.msg1 {
+  font-size: 0.23rem;
+  color: #f56c6c;
+  position: absolute;
+  top: 3.05rem;
+}
+.msg2 {
+  font-size: 0.23rem;
+  color: #f56c6c;
+  position: absolute;
+  top: 4.75rem;
+}
+.gray {
+  border: 1px solid #999;
+  background-color: #999;
+}

@@ -1,0 +1,162 @@
+/* reset */
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+p,
+blockquote,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+}
+
+body {
+  user-select: none;
+}
+
+header,
+footer,
+section,
+article,
+aside,
+nav,
+hgroup,
+address,
+figure,
+figcaption,
+menu,
+details {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption,
+th {
+  text-align: left;
+  font-weight: normal;
+}
+
+html,
+body,
+fieldset,
+img,
+iframe,
+abbr {
+  border: 0;
+}
+
+textarea,
+ul,
+ol,
+em,
+h2 {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+}
+
+input[type='button'],
+button {
+  border: 0;
+  background: #fff;
+  cursor: pointer;
+  border: 1px #ccc solid;
+}
+
+input[type='text'],
+input[type='password'] {
+  border: 1px #ccc solid;
+  text-indent: 0.5em;
+  border: 0px;
+}
+
+select {
+  border: 1px #ccc solid;
+  border: 0px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+textarea {
+  cursor: default;
+  resize: none;
+  border: none;
+}
+
+span {
+  display: inline-block;
+}
+
+i {
+  font-style: normal;
+}
+
+html,
+body {
+  background-color: #fff;
+}
+
+.hide {
+  display: none;
+}
+
+button {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+}
+.cases li p{
+  width: 100% !important;
+}
+.cases li p img{
+  width: 100% !important;
+}
+.cases li h1,.cases li p{
+  margin: 0.2rem 0;
+}
+.mint-cell-wrapper{
+  border: 1px solid #ccc;
+  margin: 0.1rem 0.2rem;
+  border-radius: 5px;
+  min-height: 0 !important;
+}

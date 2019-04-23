@@ -1,0 +1,306 @@
+.content {
+  /* margin-top: 1.01rem; */
+  width: 100%;
+}
+
+/* 病例详情信息 */
+.top_detail {
+  width: 100%;
+  height: 2.74rem;
+  background: rgba(0, 30, 70, 1);
+  position: relative;
+}
+
+.top_detail img {
+  width: 1.93rem;
+  height: 1.54rem;
+  position: absolute;
+  top: 0.6rem;
+  left: 0.24rem;
+  border-radius: 10px;
+}
+
+.top_detail h1 {
+  width: 4.59rem;
+  height: 0.77rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  margin-left: 2.58rem;
+  padding-top: 0.57rem;
+  font-size: 0.34rem;
+}
+
+.top_detail .text,
+.top_detail .vote {
+  margin-left: 2.58rem;
+  margin-top: 0.2rem;
+  font-weight: 500;
+  color: rgba(217, 219, 218, 1);
+  font-size: 0.22rem;
+  box-sizing: border-box;
+}
+
+.top_detail .text {
+  display: flex;
+  flex-direction: row;
+}
+
+.top_detail .text span:nth-child(2) {
+  margin-right: 0.3rem;
+}
+
+/* 专家信息 */
+.introduce {
+  margin: 0.4rem 0.24rem;
+  position: relative;
+}
+
+.title {
+  width: 5rem;
+  height: 0.46rem;
+  border-left: 0.1rem solid rgba(0, 133, 202, 1);
+  color: rgba(0, 133, 202, 1);
+  /* margin-left: 0.24rem; */
+  padding-left: 0.24rem;
+  font-size: 0.34rem;
+  font-weight: 600;
+}
+
+.detail {
+  /* padding: 0.6rem; */
+  margin: 0 0.6rem;
+  width: 80%;
+  text-align: center;
+  position: absolute;
+  top: 1.2rem;
+  font-size: 0.2rem;
+  background: #fff;
+}
+
+.detail img {
+  width: 1.74rem;
+  height: 1.74rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 0.6rem;
+}
+
+.detail h1 {
+  margin-left: 2.8rem;
+  text-align: left;
+  font-size: 0.34rem;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 1);
+}
+
+.detail .dtl {
+  margin-left: 2.8rem;
+  text-align: left;
+}
+
+.detail .dtl li {
+  margin: 0.11rem 0;
+  color: rgba(102, 102, 102, 1);
+  font-size: 0.26rem;
+}
+
+.intro {
+  margin-top: 1.2rem;
+  font-size: 0.2rem;
+  padding-left: 1rem;
+  padding-right: 0.35rem;
+  padding-bottom: 0.5rem;
+  padding-top: 2rem;
+  border: 1px solid #d9d9d9;
+  /* word-spacing: 100px; */
+  letter-spacing: 0.5px;
+}
+
+.cases {
+  margin: 0.4rem 0.24rem;
+}
+
+.cases li {
+  margin: 0.42rem 0;
+}
+
+.title1 {
+  color: rgba(51, 51, 51, 1);
+  line-height: 46px;
+  width: 5rem;
+  height: 0.46rem;
+  font-size: 0.34rem;
+  font-weight: 600;
+  margin: 0.28rem 0;
+}
+
+.cases li .contain {
+  font: size 0.3rem;
+  color: rgba(102, 102, 102, 1);
+  line-height: 0.5rem;
+}
+
+.doubt {
+  margin: 0.4rem 0.24rem;
+}
+
+.doubt_dtl {
+  margin-top: 0.4rem;
+}
+
+.doubt_dtl li {
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 0.5rem;
+}
+
+.review {
+  margin: 0.4rem 0.24rem;
+}
+
+.audio {
+  margin: 0.32rem 0;
+  position: relative;
+  height: 1rem;
+}
+
+.audio audio {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+}
+
+/* 中间颜色 */
+.bgc {
+  width: 100%;
+  height: 0.2rem;
+  background: rgba(245, 245, 245, 1);
+}
+
+/* 评论 */
+.comments {
+  padding: 0.3rem 0.24rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.comments div {
+  display: inline-block;
+}
+
+.comments .pinglun {
+  font-size: 0.36rem;
+  font-weight: 600;
+  color: rgba(56, 58, 59, 1);
+  width: 48%;
+}
+
+.comments .number {
+  width: 50%;
+  text-align: right;
+  color: rgba(153, 153, 153, 1);
+  font-size: 0.24rem;
+}
+
+.comments_dtl {
+  margin-top: 0.2rem;
+  width: 100%;
+}
+
+.comments_dtl li {
+  border-bottom: 1px solid rgba(238, 238, 238, 1);
+  padding-top: 0.2rem;
+  padding-bottom: 0.1rem;
+}
+
+.comments_dtl li:last-child {
+  border-bottom: none;
+}
+
+.comments_dtl li img {
+  width: 0.64rem;
+  height: 0.66rem;
+  position: absolute;
+  margin-top: 0.1rem;
+  left: 0.25rem;
+  border-radius: 50%;
+}
+
+.comments_dtl li h1 {
+  font-size: 0.2rem;
+  font-weight: 600;
+  color: rgba(0, 133, 202, 1);
+  margin-left: 0.9rem;
+  margin-bottom: 0.1rem;
+}
+
+.comments_dtl li .art {
+  width: 80%;
+  font-size: 0.26rem;
+  font-weight: 600;
+  color: rgba(34, 34, 34, 1);
+  margin-left: 0.9rem;
+  margin-bottom: 0.1rem;
+  box-sizing: border-box;
+}
+
+.comments_dtl li .time {
+  margin-left: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: rgba(153, 153, 153, 1);
+  font-size: 0.22rem;
+  width: 80%;
+}
+
+/* 底部tabbar */
+.bottom {
+  height: 0.89rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: rgba(245, 245, 245, 1);
+}
+
+.bottom input {
+  padding: 0.21rem;
+  width: 4rem;
+  background: rgba(255, 255, 255, 1);
+  height: 0.7rem;
+  box-sizing: border-box;
+  margin-top: 0.08rem;
+  margin-left: 0.24rem;
+  margin-right: 0.3rem;
+  border-radius: 10px;
+}
+
+.bottom button:nth-child(2) {
+  width: 1.2rem;
+  height: 0.7rem;
+  background: rgba(0, 133, 202, 1);
+  border-radius: 6px;
+  color: #fff;
+  margin-right: 0.28rem;
+}
+
+.bottom button:nth-child(3) {
+  width: 1.2rem;
+  height: 0.7rem;
+  border-radius: 6px;
+  color: #fff;
+  background: rgba(247, 168, 0, 1);
+}
+
+.container1 {
+  position: absolute;
+  top: 40%;
+  bottom: 0;
+  right: 0;
+  left: 50%;
+  margin-left: -30px;
+}

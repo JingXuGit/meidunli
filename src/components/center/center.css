@@ -1,0 +1,187 @@
+.mdl_bgimg {
+  position: relative;
+}
+.mdl_bgimg img {
+  height: 3.47rem;
+  width: 100%;
+}
+.mdl_user {
+  height: 2.87rem;
+  width: 90%;
+  margin: 0 5%;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 6px 14px 2px rgba(113, 197, 232, 0.5);
+  border-radius: 10px;
+  position: absolute;
+  top: 0.92rem;
+}
+.mdl_user .img_box {
+  width: 1.28rem;
+  height: 1.28rem;
+  background: rgba(238, 238, 238, 1);
+  opacity: 0.5;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 0.5rem;
+  margin-left: -0.64rem;
+}
+.mdl_user .edit {
+  /* width: 1.22rem; */
+  position: absolute;
+  left: 50%;
+  margin-left: -0.7rem;
+  bottom: 0.4rem;
+  font-size: 0.3rem;
+  /* font-weight: 600; */
+  color: #fff;
+  background-color: rgba(0, 133, 202, 1);
+  padding: 0.05rem 0.1rem;
+  border-radius: 5px;
+}
+.mdl_user .img_box img {
+  width: 100%;
+  height: 100%;
+}
+.content {
+  margin: 0.5rem 0;
+  margin-left: 0.5rem;
+}
+.content .list {
+  margin: 0 0.5rem 0 0;
+  height: 1.08rem;
+  line-height: 1.08rem;
+  border-bottom: 1px solid rgba(229, 229, 229, 1);
+}
+.content .list span {
+  font-size: 0.3rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 36px;
+}
+.content .list input {
+  font-size: 0.3rem;
+  color: rgba(51, 51, 51, 1);
+  line-height: 36px;
+  text-align: right;
+  width: 68%;
+}
+.content .list span:first-child {
+  text-align: left;
+  width: 30%;
+}
+.content .list span:last-child {
+  text-align: right;
+  align-content: right;
+  width: 68%;
+  color: rgba(128, 128, 128, 1);
+  line-height: 36px;
+}
+.mdl_login_btn {
+  margin-top: 0.7rem;
+  width: 6.87rem;
+  height: 1.35rem;
+  margin-left: 0.315rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -3.43rem;
+  margin-bottom: 1rem;
+}
+.mdl_login_btn img {
+  width: 6.87rem;
+  height: 1.35rem;
+}
+.mdl_login_btn span {
+  position: absolute;
+  width: 6.87rem;
+  height: 1.35rem;
+  margin-top: -1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.36rem;
+  color: rgba(255, 255, 255, 1);
+}
+.bottom {
+  height: 0.98rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid rgba(230, 230, 230, 1);
+  background-color: #fff;
+}
+.bottom div {
+  height: 0.98rem;
+  width: 49%;
+  display: inline-block;
+  text-align: center;
+  margin-top: 0.09rem;
+}
+.bottom div img {
+  width: 0.44rem;
+  height: 0.4rem;
+}
+.bottom div span {
+  font-size: 0.2rem;
+  color: rgba(203, 203, 211, 1);
+  position: absolute;
+  top: 0.6rem;
+  width: 0.7rem;
+}
+.bottom .mdl_left span {
+  left: 24.5%;
+  margin-left: -0.35rem;
+}
+.bottom .mdl_right span {
+  right: 25.5%;
+  margin-right: -0.35rem;
+}
+
+.fileinput-button input {
+  -ms-filter: "alpha(opacity=0)";
+  width: 1.22rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.61rem;
+  bottom: 0.52rem;
+  opacity: 0;
+  margin-left: -0.7rem;
+  bottom: 0.4rem;
+  padding: 0rem 0.1rem;
+  border-radius: 5px;
+}
+.bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.6;
+  z-index: 1;
+}
+.dialog {
+  width: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  left: 5%;
+  top: 38%;
+  z-index: 2;
+}
+.dialog .btm {
+  text-align: center;
+  margin: 0.2rem 0;
+}
+.dialog .btm .enter {
+  margin-right: 0.3rem;
+}
+.dialog .btm .danger {
+  margin-left: 0.3rem;
+}
+.mint-cell-wrapper {
+  border: 1px solid #ccc;
+  margin: 0.1rem 0.2rem;
+  border-radius: 5px;
+}

@@ -46,7 +46,7 @@
           :class="flag2 ? 'rule_pwd' : ''"
           v-model="pwd"
           @blur="password"
-          maxlength="10"
+          maxlength="16"
           minlength="6"
           :disabled="disabled"
         />

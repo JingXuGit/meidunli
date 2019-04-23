@@ -33,21 +33,24 @@ export default {
         param.append("mobile", this.tel);
         param.append("user_pass", this.pwd);
         param.append("code", this.yzm);
-        param.append("token", window.localStorage.getItem("token"));
         const { data: data } = await this.$http.post("/users/resetpwd", param);
-        console.log(data);
         if (data.code == 1) {
           Toast({
             message: data.msg,
             position: "middle",
-            duration: 3000
+            duration: 1000
           });
           this.$router.push("/");
         } else {
+          Toast({
+            message: data.msg,
+            position: "middle",
+            duration: 1000
+          });
         }
       } else {
         Toast({
-          message: "请先获取验证码",
+          message: "操作失败!",
           position: "bottom",
           duration: 3000
         });
@@ -87,9 +90,7 @@ export default {
         }, 1000);
         let param = new URLSearchParams();
         param.append("mobile", this.tel);
-        param.append("token", window.localStorage.getItem("token"));
         const { data: data } = await this.$http.post("/users/sendSms", param);
-        console.log(data);
       }
     },
     telphone() {
@@ -119,9 +120,9 @@ export default {
       if (this.pwd == "" || this.pwd == undefined) {
         this.flag2 = true;
         this.msg_pwd = "密码不能为空";
-      } else if (this.pwd.length < 6 || this.pwd.length > 10) {
+      } else if (this.pwd.length < 6 ||this.pwd.length > 16) {
         this.flag2 = true;
-        this.msg_pwd = "密码长度错误 应为6-10位密码";
+        this.msg_pwd = "密码长度错误 长度应位6-16位密码";
       } else {
         this.flag2 = false;
         this.msg_pwd = "";

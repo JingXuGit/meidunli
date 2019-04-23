@@ -26,7 +26,7 @@
           :class="flag1 ? 'rule_pwd' : ''"
           v-model="login_form.user_pass"
           @blur="password"
-          maxlength="10"
+          maxlength="16"
           minlength="6"
         />
         <div class="msg1">{{ this.msg_pwd }}</div>
@@ -50,7 +50,7 @@ export default {
     return {
       login_form: {
         mobile: "",
-        user_pass: "",
+        user_pass: ""
       },
       flag: false,
       flag1: false,
@@ -61,7 +61,6 @@ export default {
   methods: {
     /* 去修改密码页 */
     toChangePsd() {
-      console.log(123);
       this.$router.push("/changePsd");
     },
     /* 登录 */
@@ -72,7 +71,7 @@ export default {
         this.login_form.user_pass == "" ||
         reg.test(this.login_form.mobile) ||
         this.login_form.user_pass.length < 6 ||
-        this.login_form.user_pass.length > 10
+        this.login_form.user_pass.length > 16
       ) {
         if (
           this.login_form.mobile == "" ||
@@ -96,10 +95,10 @@ export default {
           this.msg_pwd = "密码不能为空";
         } else if (
           this.login_form.user_pass.length < 6 ||
-          this.login_form.user_pass.length >=7
+          this.login_form.user_pass.length > 16
         ) {
           this.flag1 = true;
-          this.msg_pwd = "密码长度错误 应为账号后6位密码";
+          this.msg_pwd = "密码长度错误!长度应为6-16位密码";
         } else {
           this.flag1 = false;
           this.msg_pwd = "";
@@ -145,10 +144,10 @@ export default {
         this.msg_pwd = "密码不能为空";
       } else if (
         this.login_form.user_pass.length < 6 ||
-        this.login_form.user_pass.length >= 7
+        this.login_form.user_pass.length > 16
       ) {
         this.flag1 = true;
-        this.msg_pwd = "密码长度错误 应为账号后6位密码";
+        this.msg_pwd = "密码长度错误!长度应为6-16位密码";
       } else {
         this.flag1 = false;
         this.msg_pwd = "";

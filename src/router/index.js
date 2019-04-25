@@ -63,9 +63,9 @@ const router = new Router({
 })
 router.beforeEach(async (to, from, next) => {
   // 如果访问的 login 页面，直接放行
-  let token = window.localStorage.getItem("token");
+  let token = window.localStorage.getItem("user_token");
   if (to.path == '/changePsd') return next()
-  if (to.path === '/') {
+  if (to.path == '/') {
     if (token) {
       return next({
         path: '/center'

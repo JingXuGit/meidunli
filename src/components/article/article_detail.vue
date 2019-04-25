@@ -5,7 +5,7 @@
       <div class="content">
         <!-- 病例详情信息 -->
         <div class="top_detail">
-          <img :src="$config.url + article.thumbnail" alt="" />
+          <img :src="article.thumbnail" alt="" />
           <h1>{{ article.post_title }}</h1>
           <div class="text">
             <span
@@ -25,7 +25,7 @@
         <div class="introduce">
           <div class="title">专家介绍</div>
           <div class="detail">
-            <img :src="$config.url + article.speak_avatar" alt="" />
+            <img :src="article.speak_avatar" alt="" />
             <h1>{{ article.speak_name }}</h1>
             <ul class="dtl">
               <li>{{ article.speak_job_name }}</li>
@@ -79,7 +79,7 @@
                   alt=""
                   v-if="item.avatar == ''"
                 />
-                <img :src="$config.url + item.avatar" alt="" v-else />
+                <img :src="item.avatar" alt="" v-else />
                 <h1 v-if="item.nick_name == '' || item.nick_name == null">
                   美敦力{{ PrefixInteger(item.user_id, 4) }}
                 </h1>

@@ -13,7 +13,7 @@
       <!-- 登录表单 -->
       <div class="mdl_form">
         <input
-          type="number"
+          type="text"
           placeholder="请输入账号"
           :class="flag ? 'rule_tel' : ''"
           v-model="login_form.mobile"
@@ -110,10 +110,10 @@ export default {
         if (data.code != 1) {
           this.flag1 = true;
           this.msg_pwd = data.msg;
-          window.localStorage.removeItem("token");
+          window.localStorage.removeItem("user_token");
           window.localStorage.removeItem("user_id");
         } else {
-          window.localStorage.setItem("token", data.data.token);
+          window.localStorage.setItem("user_token", data.data.token);
           window.localStorage.setItem("user_id", data.data.id);
           Toast({
             message: "登录成功",

@@ -1,4 +1,5 @@
 export default {
-  // url: 'http://192.168.0.102/thinkcmf/public'
-  url:'http://42.51.42.195'
+  url: 'http://mdl.mime.org.cn',
+  Bucket: 'static-1252490301',
+  Region: 'ap-shanghai',
 }

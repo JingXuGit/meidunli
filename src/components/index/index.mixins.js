@@ -12,7 +12,7 @@ export default {
       str: {
         order_type: 1,
         page: 1,
-        token: window.localStorage.getItem("token")
+        token: window.localStorage.getItem("user_token")
       },
       search: "",
       flags: false,
@@ -43,6 +43,19 @@ export default {
     navigateTo(id) {
       this.$router.push("/article?id=" + id);
     },
+    /* 清空文字 */
+    cancle_input() {
+      this.search = "";
+      this.flags = false;
+      this.indexList();
+    },
+    input_blur() {
+      if (this.search.length > 0) {
+        this.flags = true;
+      } else {
+        this.flags = false;
+      }
+    },
     /* 点击下拉框 */
     click_select(num) {
       if (num == 1) {
@@ -58,11 +71,7 @@ export default {
       var p = this.$param(this.str);
       const { data: data } = await this.$http.post("case/index", p);
       if (data.code != 1) {
-        Toast({
-          message: data.msg,
-          position: "middle",
-          duration: 1000
-        });
+        this.Toasts(data.msg)
       } else {
         this.arrList = data.data;
       }
@@ -79,16 +88,12 @@ export default {
         param.append("post_type", pid);
         param.append("page", "0");
         param.append("order_type", this.str.order_type);
-        param.append("token", window.localStorage.getItem("token"));
+        param.append("token", window.localStorage.getItem("user_token"));
         const { data: data } = await this.$http.post("case/index", param);
         if (data.data.length > 0) {
           this.arrList = data.data;
         } else {
-          Toast({
-            message: "没有更多数据",
-            position: "middle",
-            duration: 1000
-          });
+          this.Toasts('没有更多数据')
           this.arrList = [];
         }
       } else {
@@ -117,16 +122,12 @@ export default {
         }
         param.append("page", "0");
         param.append("order_type", id);
-        param.append("token", window.localStorage.getItem("token"));
+        param.append("token", window.localStorage.getItem("user_token"));
         const { data: data } = await this.$http.post("case/index", param);
         if (data.data.length > 0) {
           this.arrList = data.data;
         } else {
-          Toast({
-            message: "没有更多数据",
-            position: "middle",
-            duration: 1000
-          });
+          this.Toasts('没有更多数据')
           this.arrList = [];
         }
       } else {
@@ -146,31 +147,27 @@ export default {
       param.append("page", "1");
       param.append("keyword", this.search);
       param.append("order_type", 2);
-      param.append("token", window.localStorage.getItem("token"));
+      param.append("token", window.localStorage.getItem("user_token"));
       const { data: data } = await this.$http.post("case/index", param);
       if (data.data.length > 0) {
         this.arrList = data.data;
       } else {
-        Toast({
-          message: "没有更多数据",
-          position: "middle",
-          duration: 2000
-        });
+        this.Toasts('没有更多数据')
         this.arrList = [];
       }
 
     },
     /* 上拉刷新 */
     async loadBottom(id) {
-      this.allLoaded = false; // 若数据已全部获取完毕
+      this.allLoaded = false; 
       this.bottomStatus = "loading";
       this.str.page = this.str.page + 1;
       var p = this.$param(this.str);
       const { data: data } = await this.$http.post("case/index", p);
-      if (data.data.length <= 0) {
+       if (data.data.length <= 0) {
         this.str.page = this.str.page - 1;
         /* TODO*/
-        this.bottomStatus = "没有更多数据!";
+        this.Toasts('没有更多数据')
       } else {
         this.allLoaded = false;
         var datas = data.data;
@@ -180,18 +177,12 @@ export default {
       }
       this.$refs.loadmore.onBottomLoaded();
     },
-    /* 清空文字 */
-    cancle_input() {
-      this.search = "";
-      this.flags = false;
-      this.indexList();
-    },
-    input_blur() {
-      if (this.search.length > 0) {
-        this.flags = true;
-      } else {
-        this.flags = false;
-      }
+    Toasts(msg) {
+      Toast({
+        message: msg,
+        position: "middle",
+        duration: 2000
+      });
     }
   }
 }

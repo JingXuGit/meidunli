@@ -108,7 +108,7 @@
                 </span> -->
               </div>
               <img
-                :src="$config.url + item.thumbnail"
+                :src="item.thumbnail"
                 alt=""
                 class="illness_img"
               />

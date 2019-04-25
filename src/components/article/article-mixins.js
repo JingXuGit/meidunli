@@ -29,7 +29,7 @@ export default {
       var param = new URLSearchParams();
       this.flags = true;
       param.append("id", ids);
-      param.append("token", window.localStorage.getItem("token"));
+      param.append("token", window.localStorage.getItem("user_token"));
       const { data: data } = await this.$http.post("case/content", param);
       if (data.code != 1) {
         Toast({
@@ -44,7 +44,7 @@ export default {
     async doLike(id) {
       var param = new URLSearchParams();
       param.append("id", id);
-      param.append("token", window.localStorage.getItem("token"));
+      param.append("token", window.localStorage.getItem("user_token"));
       param.append("user_id", window.localStorage.getItem("user_id"));
       const { data: data } = await this.$http.post("case/doLike", param);
       if (data.code == 1) {
@@ -77,7 +77,7 @@ export default {
         param.append("to_user_id", sid);
         param.append("content", this.comments_input);
         param.append("user_id", window.localStorage.getItem("user_id"));
-        param.append("token", window.localStorage.getItem("token"));
+        param.append("token", window.localStorage.getItem("user_token"));
         const { data: data } = await this.$http.post("Comment/addPost", param);
         if (data.code != 1) {
           Toast({
@@ -91,7 +91,6 @@ export default {
             position: "middle",
             duration: 3000
           });
-          // this.article_list(object_id);
           this.article.comment_count = this.article.comment_count + 1;
           this.comments_input = "";
           this.selects(object_id);
@@ -103,7 +102,7 @@ export default {
       let param = new URLSearchParams();
       param.append("id", id);
       param.append("page", this.page);
-      param.append("token", window.localStorage.getItem("token"));
+      param.append("token", window.localStorage.getItem("user_token"));
       const { data: data } = await this.$http.post("Comment/selects", param);
       if (data.code != 1) {
         Toast({
@@ -128,7 +127,7 @@ export default {
       let param = new URLSearchParams();
       param.append("page", this.str.page);
       param.append("id", this.id);
-      param.append("token", window.localStorage.getItem("token"));
+      param.append("token", window.localStorage.getItem("user_token"));
       const { data: data } = await this.$http.post("comment/selects", param);
       if (data.data.length <= 0) {
         this.str.page = this.str.page - 1;

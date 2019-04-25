@@ -15,7 +15,7 @@ Axios.interceptors.request.use(config => {
 })
 Axios.interceptors.response.use(config => {
   if (config.data.code == 1001) {
-    window.localStorage.removeItem('token')
+    window.localStorage.removeItem('user_token')
     router.push({ path: '/' })
   }
   return config

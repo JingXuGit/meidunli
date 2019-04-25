@@ -1,4 +1,6 @@
 import { Actionsheet, Toast, Button } from "mint-ui";
+import cos from "../../CosAuth";
+
 export default {
   data() {
     return {
@@ -15,51 +17,72 @@ export default {
     this.getUserMsg();
   },
   methods: {
-    /* TODO */
+    user_click(num) {
+      this.flag = true;
+      this.num = num;
+    },
+    /* 点击编辑取消 */
+    cancle() {
+      this.flag = false;
+    },
+    Toast2(msg) {
+      Toast({
+        message: msg,
+        position: "middle",
+        duration: 1000
+      });
+    },
+    logout() {
+      window.localStorage.removeItem("user_token");
+      window.localStorage.removeItem("user_id");
+      this.$router.push("/");
+    },
+    index() {
+      this.$router.push("/index");
+    },
+    center() {
+      this.$router.push("/center");
+    },
+    /* 上传到腾讯云 */
     async add_img(e) {
       let file = e.target.files[0];
-      let param = new FormData(); //创建form对象
-      console.log(file.size);
-      // 5242880
-      const isLt2M = file.size / 1024 / 1024 < 5;
-      if (!isLt2M) {
-        this.Toast2("图片尺寸过大!,上传失败!");
-      } else {
-        param.append("file", file, file.name); //通过append向form对象添加数据
-        param.append("token", window.localStorage.getItem("token"));
-        const { data: data } = await this.$http.post(
-          this.$config.url + "/admin/speak/upload/",
-          param
-        );
-        if (data.code == 1) {
-          this.updateHeader(data.data.url);
-        } else {
-          this.Toast2(data.msg);
+      if (!file) return;
+      cos.sliceUploadFile({
+        Bucket: this.$config.Bucket,
+        Region: this.$config.Region,
+        Key: file.name,
+        Body: file,
+        onHashProgress: function (progressData) {
+        },
+        onProgress: function (progressData) {
+        },
+      }, (err, data) => {
+        if (err) return this.Toast2('上传失败!')
+        if (data.statusCode == 200) {
+          this.updateHeader(data.Location)
         }
-      }
+      });
     },
-    /* 上传图片 */
+    /* 入库 */
     async updateHeader(imgurl) {
       let param = new URLSearchParams();
+      if (imgurl.indexOf('http') != 0) {
+        imgurl = 'https://' + imgurl;
+      }
       param.append("avatar", imgurl);
       param.append("id", window.localStorage.getItem("user_id"));
-      param.append("token", window.localStorage.getItem("token"));
+      param.append("token", window.localStorage.getItem("user_token"));
       const { data: data } = await this.$http.post("/Users/editPost", param);
-      this.Toast2(data.msg);
       this.userList.avatar = data.data.avatar;
     },
     // 获取用户信息
     async getUserMsg() {
       let param = new URLSearchParams();
       param.append("id", window.localStorage.getItem("user_id"));
-      param.append("token", window.localStorage.getItem("token"));
+      param.append("token", window.localStorage.getItem("user_token"));
       const { data: data } = await this.$http.post("Users/edit", param);
       if (data.code != 1) {
-        Toast({
-          message: "获取用户信息失败",
-          position: "middle",
-          duration: 1000
-        });
+        this.Toast2("获取用户信息失败")
       } else {
         this.userList = data.data;
         if (this.userList.sex == 1) {
@@ -88,17 +111,13 @@ export default {
         param.append("mobile", this.userList.mobile);
       }
       param.append("id", window.localStorage.getItem("user_id"));
-      param.append("token", window.localStorage.getItem("token"));
+      param.append("token", window.localStorage.getItem("user_token"));
       const { data: data } = await this.$http.post("Users/editPost", param);
       console.log(data);
       if (data.code == 1) {
         this.flag = false;
       }
-      Toast({
-        message: data.msg,
-        position: "middle",
-        duration: 1000
-      });
+      this.Toast2(data.msg)
       //   if (data.code != 1) {
       //   Toast({
       //     message: "获取用户信息失败",
@@ -109,32 +128,5 @@ export default {
       //   this.userList = data.data;
       // }
     },
-    user_click(num) {
-      this.flag = true;
-      this.num = num;
-    },
-    /* 点击编辑取消 */
-    cancle() {
-      this.flag = false;
-    },
-    Toast2(msg) {
-      Toast({
-        message: msg,
-        position: "middle",
-        duration: 1000
-      });
-    },
-    logout() {
-      window.localStorage.removeItem("token");
-      window.localStorage.removeItem("user_id");
-      this.$router.push("/");
-    },
-    index() {
-      this.$router.push("/index");
-    },
-    center() {
-      this.$router.push("/center");
-    }
-  },
-  
+  }
 }

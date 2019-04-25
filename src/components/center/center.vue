@@ -10,7 +10,7 @@
             alt=""
             v-if="userList.avatar == ''"
           />
-          <img :src="$config.url + userList.avatar" alt="" v-else />
+          <img :src="userList.avatar" alt="" v-else />
         </div>
         <span class="btn btn-success fileinput-button">
           <span class="edit">编辑头像</span>
